@@ -5,9 +5,7 @@ import io.github.wayerr.ft.FocusTraverse;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.AWTEventListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
 
 /**
  * Created by wayerr on 10.02.15.
@@ -15,8 +13,11 @@ import java.awt.event.KeyEvent;
 public final class TraverseFocusSupport {
 
     private final FocusTraverse<JComponent> focusTraverse = new FocusTraverse<JComponent>(new SwingAdapter());
+    private GlassPane _glassPane;
+
     private boolean focusTraverseMode;
     private RootPaneContainer container;
+    private Component oldGlassPane;
 
     public TraverseFocusSupport() {
         Toolkit.getDefaultToolkit().addAWTEventListener(new AWTEventListener() {
@@ -58,20 +59,32 @@ public final class TraverseFocusSupport {
      */
     public void install(final RootPaneContainer rpc) {
         this.container = rpc;
-        GlassPane glassPane = new GlassPane();
-        rpc.setGlassPane(glassPane);
-        //rpc.getLayeredPane().setLayer(glassPane, JLayeredPane.DEFAULT_LAYER, 0);
-        //rpc.getLayeredPane().setLayer(b, JLayeredPane.DRAG_LAYER, -1);
-        //rpc.getLayeredPane().setLayer(glassPane, JLayeredPane.DEFAULT_LAYER, 0);
-        //rpc.getLayeredPane().setVisible(true);
     }
 
     public void setFocusTraverseMode(boolean focusTraverseMode) {
-        if(this.focusTraverseMode == focusTraverseMode) {
+        if (this.focusTraverseMode == focusTraverseMode) {
             return;
         }
         this.focusTraverseMode = focusTraverseMode;
         //TODO support for multiple containers
-        container.getGlassPane().setVisible(this.focusTraverseMode);
+        if (this.focusTraverseMode) {
+            this.oldGlassPane = container.getGlassPane();
+            //TODO update glassPane size
+            Component glassPane = getGlassPane();
+            container.setGlassPane(glassPane);
+            glassPane.setVisible(true);
+        } else {
+            Component glassPane = container.getGlassPane();
+            if (glassPane == this._glassPane) {
+                container.setGlassPane(this.oldGlassPane);
+            }
+        }
+    }
+
+    public Component getGlassPane() {
+        if(_glassPane == null) {
+            _glassPane = new GlassPane();
+        }
+        return _glassPane;
     }
 }
