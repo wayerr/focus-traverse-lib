@@ -12,7 +12,7 @@ import java.awt.event.*;
  */
 public final class TraverseFocusSupport {
 
-    private final FocusTraverse<JComponent> focusTraverse = new FocusTraverse<JComponent>(new SwingAdapter());
+    private final FocusTraverse<Component> focusTraverse = new FocusTraverse<Component>(new SwingAdapter());
     private GlassPane _glassPane;
 
     private boolean focusTraverseMode;
@@ -47,7 +47,9 @@ public final class TraverseFocusSupport {
                         direction = null;
                 }
                 if(direction != null) {
-                    focusTraverse.traverse(container.getRootPane(), direction);
+                    final Component traverseRoot = container.getRootPane();
+                    Component newFocusOwner = focusTraverse.traverse(traverseRoot, getFocusOwner(), direction);
+                    updateFocusOwner(newFocusOwner);
                 }
             }
         }, AWTEvent.KEY_EVENT_MASK);
@@ -72,6 +74,7 @@ public final class TraverseFocusSupport {
             //TODO update glassPane size
             Component glassPane = getGlassPane();
             container.setGlassPane(glassPane);
+            updateFocusOwner(getFocusOwner());
             glassPane.setVisible(true);
         } else {
             Component glassPane = container.getGlassPane();
@@ -79,6 +82,21 @@ public final class TraverseFocusSupport {
                 container.setGlassPane(this.oldGlassPane);
             }
         }
+    }
+
+    private void updateFocusOwner(Component component) {
+        Rectangle rectangle;
+        if(component == null) {
+            rectangle = null;
+        } else {
+            rectangle = component.getBounds();
+            rectangle.setLocation(SwingUtilities.convertPoint(component, rectangle.getLocation(), container.getRootPane()));
+        }
+        _glassPane.setRectangle(rectangle);
+    }
+
+    private Component getFocusOwner() {
+        return KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
     }
 
     public Component getGlassPane() {

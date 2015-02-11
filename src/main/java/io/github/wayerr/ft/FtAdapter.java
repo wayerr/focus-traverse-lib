@@ -9,9 +9,7 @@ import java.util.List;
  */
 public interface FtAdapter<C> {
 
-    void getBounds(C comp, Rectangle rect);
-
-    void setBounds(Rectangle rect, C comp);
+    void getBounds(C root, C comp, Rectangle rect);
 
     boolean isFocused(C comp);
 
@@ -21,4 +19,11 @@ public interface FtAdapter<C> {
      * @param childs
      */
     void getChilds(C root, List<C> childs);
+
+    /**
+     * return parent of child or null
+     * @param child
+     * @return
+     */
+    C getParent(C child);
 }

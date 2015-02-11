@@ -17,6 +17,7 @@ final class GlassPane extends JComponent {
 
     void setRectangle(Rectangle rectangle) {
         this.rectangle = rectangle;
+        repaint();
     }
 
     @Override
@@ -26,7 +27,8 @@ final class GlassPane extends JComponent {
 
         if(rectangle != null) {
             g.setColor(withAlpha(128));
-            g.drawRect(0, 0, getWidth(), getHeight());
+            ((Graphics2D)g).setStroke(new BasicStroke(3));
+            g.drawRoundRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height, 3, 3);
         }
     }
 

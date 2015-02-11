@@ -12,35 +12,50 @@ import java.util.List;
  *
  * Created by wayerr on 10.02.15.
  */
-public final class SwingAdapter implements FtAdapter<JComponent> {
+public final class SwingAdapter implements FtAdapter<Component> {
 
 
     @Override
-    public void getBounds(JComponent comp, Rectangle rect) {
-        rect.x = comp.getX();
-        rect.y = comp.getY();
+    public void getBounds(Component root, Component comp, Rectangle rect) {
+        Point point = SwingUtilities.convertPoint(comp, comp.getX(), comp.getY(), root);
+        rect.x = point.x;
+        rect.y = point.y;
         rect.w = comp.getWidth();
         rect.h = comp.getHeight();
     }
 
     @Override
-    public void setBounds(Rectangle rect, JComponent comp) {
-        comp.setBounds(rect.x, rect.y, rect.w, rect.h);
-    }
-
-    @Override
-    public boolean isFocused(JComponent comp) {
+    public boolean isFocused(Component comp) {
         return comp.hasFocus();
     }
 
     @Override
-    public void getChilds(JComponent root, List<JComponent> childs) {
-        final int count = root.getComponentCount();
+    public void getChilds(Component comp, List<Component> childs) {
+        if(!(comp instanceof Container)) {
+            return;
+        }
+        Container cont = (Container) comp;
+        final int count = cont.getComponentCount();
         for(int i = 0; i < count; i++) {
-            Component component = root.getComponent(i);
-            if(component instanceof JComponent && component.isFocusable()) {
-               childs.add((JComponent) component);
+            Component component = cont.getComponent(i);
+            if(component instanceof JScrollPane) {
+                component = ((JScrollPane)component).getViewport().getView();
+            }
+            if(component.isFocusable()) {
+               childs.add(component);
             }
         }
+    }
+
+    @Override
+    public Component getParent(Component child) {
+        Container parent = child.getParent();
+        if(parent instanceof JViewport) {
+            parent = parent.getParent();
+        }
+        if(parent instanceof JScrollPane) {
+            parent = parent.getParent();
+        }
+        return parent;
     }
 }

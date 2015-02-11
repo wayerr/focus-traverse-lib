@@ -10,4 +10,14 @@ public class Rectangle {
     public int y;
     public int w;
     public int h;
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+          "x=" + x +
+          ", y=" + y +
+          ", w=" + w +
+          ", h=" + h +
+          '}';
+    }
 }
