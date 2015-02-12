@@ -48,7 +48,7 @@ public final class SwingAdapter implements FtAdapter<Component> {
     }
 
     @Override
-    public Component getParent(Component child) {
+    public Container getParent(Component child) {
         Container parent = child.getParent();
         if(parent instanceof JViewport) {
             parent = parent.getParent();

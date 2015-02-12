@@ -27,9 +27,10 @@ public final class Example implements Runnable {
         GroupLayout gl = new GroupLayout(pane);
         pane.setLayout(gl);
 
-        JComponent one = new JScrollPane(new JTextArea("hold ALT \nthen move focus by arrow keys"));
-        JComponent two = new JScrollPane(new JTextArea("2"));
-        JComponent three = new JScrollPane(new JTextArea("3"));
+        JComponent one = new JScrollPane(new JTextArea("hold ALT \nthen move focus by arrow keys\n" +
+          "enter to container by pgDown\nleave container by pgUp"));
+        JComponent two = new JScrollPane(new JTextArea("sample"));
+        JComponent three = new JScrollPane(new JTextArea("sample"));
         JComponent four = createPanel();
 
         gl.setVerticalGroup(gl.createParallelGroup()

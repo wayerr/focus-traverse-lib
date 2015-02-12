@@ -8,17 +8,21 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
+ * Basic implementation for focus travesing by arrow and pgUp/pgDown keys in swing application <p/>
+ * Usage: <code>new TraverseFocusSupport().install(frame);</code> <p/>
  * Created by wayerr on 10.02.15.
  */
 public final class TraverseFocusSupport {
 
-    private final FocusTraverse<Component> focusTraverse = new FocusTraverse<Component>(new SwingAdapter());
+    private final SwingAdapter swingAdapter = new SwingAdapter();
+    private final FocusTraverse<Component> focusTraverse = new FocusTraverse<Component>(swingAdapter);
     private GlassPane _glassPane;
 
     private boolean focusTraverseMode;
-    private RootPaneContainer container;
+    private RootPaneContainer rootPaneOwner;
     private Component oldGlassPane;
     private Component newFocusOwner;
+    private Container focusCycleRoot;
 
     public TraverseFocusSupport() {
         Toolkit.getDefaultToolkit().addAWTEventListener(new AWTEventListener() {
@@ -34,30 +38,70 @@ public final class TraverseFocusSupport {
 
             private void traverse(KeyEvent keyEvent) {
                 final int keyCode = keyEvent.getKeyCode();
-                Direction direction;
                 switch (keyCode) {
-                    case KeyEvent.VK_LEFT: direction = Direction.LEFT;
+                    case KeyEvent.VK_LEFT:
+                        traverseFocusTo(Direction.LEFT);
                         break;
-                    case KeyEvent.VK_RIGHT: direction = Direction.RIGHT;
+                    case KeyEvent.VK_RIGHT:
+                        traverseFocusTo(Direction.RIGHT);
                         break;
-                    case KeyEvent.VK_UP: direction = Direction.UP;
+                    case KeyEvent.VK_UP:
+                        traverseFocusTo(Direction.UP);
                         break;
-                    case KeyEvent.VK_DOWN: direction = Direction.DOWN;
+                    case KeyEvent.VK_DOWN:
+                        traverseFocusTo(Direction.DOWN);
                         break;
-                    default:
-                        direction = null;
-                }
-                if(direction != null) {
-                    final Component traverseRoot = container.getRootPane();
-                    Component currentFocusOwner = TraverseFocusSupport.this.newFocusOwner;
-                    if(currentFocusOwner == null) {
-                        currentFocusOwner = getFocusOwner();
-                    }
-                    Component newFocusOwner = focusTraverse.traverse(traverseRoot, currentFocusOwner, direction);
-                    updateFocusOwner(newFocusOwner);
+                    case KeyEvent.VK_PAGE_DOWN:
+                        cycleDown();
+                        break;
+                    case KeyEvent.VK_PAGE_UP:
+                        cycleUp();
+                        break;
                 }
             }
         }, AWTEvent.KEY_EVENT_MASK);
+    }
+
+    /**
+     * use parent of current focus cycle root for focus cycling
+     */
+    private void cycleUp() {
+        if(this.focusCycleRoot == null || this.focusCycleRoot == rootPaneOwner.getRootPane()) {
+            return;
+        }
+        setFocusCycleRoot(this.swingAdapter.getParent(this.focusCycleRoot));
+    }
+
+    /**
+     * use current component for focus cycling
+     */
+    private void cycleDown() {
+        Component focusOwner = getFocusOwner();
+        if(!(focusOwner instanceof Component)) {
+            return;
+        }
+        setFocusCycleRoot((Container) focusOwner);
+    }
+
+
+    private void traverseFocusTo(Direction direction) {
+        Component newFocusOwner = focusTraverse.traverse(getFocusCycleRoot(), getFocusOwner(), direction);
+        updateFocusOwner(newFocusOwner);
+    }
+
+    private Container getFocusCycleRoot() {
+        if(this.focusCycleRoot == null) {
+            return rootPaneOwner.getRootPane();
+        }
+        return this.focusCycleRoot;
+    }
+
+    private void setFocusCycleRoot(Container newFocusCycleRoot) {
+        if(newFocusCycleRoot.getComponentCount() == 0) {
+            return;
+        }
+        this.focusCycleRoot = newFocusCycleRoot;
+        updateFocusOwner(newFocusCycleRoot.getComponent(0));
     }
 
     /**
@@ -65,7 +109,7 @@ public final class TraverseFocusSupport {
      * @param rpc
      */
     public void install(final RootPaneContainer rpc) {
-        this.container = rpc;
+        this.rootPaneOwner = rpc;
     }
 
     public void setFocusTraverseMode(boolean focusTraverseMode) {
@@ -76,16 +120,16 @@ public final class TraverseFocusSupport {
         //TODO support for multiple containers
         if (this.focusTraverseMode) {
             this.newFocusOwner = null;
-            this.oldGlassPane = container.getGlassPane();
+            this.oldGlassPane = rootPaneOwner.getGlassPane();
             //TODO update glassPane size
             Component glassPane = getGlassPane();
-            container.setGlassPane(glassPane);
+            rootPaneOwner.setGlassPane(glassPane);
             updateFocusOwner(getFocusOwner());
             glassPane.setVisible(true);
         } else {
-            Component glassPane = container.getGlassPane();
+            Component glassPane = rootPaneOwner.getGlassPane();
             if (glassPane == this._glassPane) {
-                container.setGlassPane(this.oldGlassPane);
+                rootPaneOwner.setGlassPane(this.oldGlassPane);
             }
             if(this.newFocusOwner != null) {
                 this.newFocusOwner.requestFocusInWindow();
@@ -98,13 +142,16 @@ public final class TraverseFocusSupport {
             return;
         }
         Rectangle rectangle = component.getBounds();
-        rectangle.setLocation(SwingUtilities.convertPoint(component.getParent(), rectangle.getLocation(), container.getRootPane()));
+        rectangle.setLocation(SwingUtilities.convertPoint(component.getParent(), rectangle.getLocation(), rootPaneOwner.getRootPane()));
         this.newFocusOwner = component;
         _glassPane.setRectangle(rectangle);
     }
 
     private Component getFocusOwner() {
-        return KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
+        if(this.newFocusOwner == null) {
+            return KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
+        }
+        return this.newFocusOwner;
     }
 
     public Component getGlassPane() {

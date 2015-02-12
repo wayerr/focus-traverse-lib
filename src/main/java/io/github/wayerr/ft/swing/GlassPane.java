@@ -8,7 +8,7 @@ import java.awt.*;
 */
 final class GlassPane extends JComponent {
 
-    private Color color = new Color(0x3f3fe9);
+    private Color color = new Color(0x1f6ee9);
     private Rectangle rectangle;
 
     public GlassPane() {
