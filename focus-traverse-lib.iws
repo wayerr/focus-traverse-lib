@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7569e837-ef9a-491a-92b5-743926dc7b8c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/Example.java" afterPath="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/Example.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/SwingAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/SwingAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/TraverseFocusSupport.java" afterPath="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/TraverseFocusSupport.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/focus-traverse-lib.iws" afterPath="$PROJECT_DIR$/focus-traverse-lib.iws" />
     </list>
     <ignored path="focus-traverser-lib.iws" />
@@ -29,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SwingAdapter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SwingAdapter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/SwingAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="490" max-vertical-offset="1206">
-              <caret line="41" column="59" selection-start-line="41" selection-start-column="59" selection-end-line="41" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.60073936" vertical-offset="485" max-vertical-offset="1206">
+              <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -76,18 +78,18 @@
       <file leaf-file-name="FocusTraverse.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/FocusTraverse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="3060">
-              <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="3060">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Example.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Example.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/Example.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.23794213" vertical-offset="1138" max-vertical-offset="2286">
-              <caret line="55" column="63" selection-start-line="55" selection-start-column="63" selection-end-line="55" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="436" max-vertical-offset="2286">
+              <caret line="29" column="67" selection-start-line="29" selection-start-column="67" selection-end-line="29" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -116,8 +118,8 @@
       <file leaf-file-name="TraverseFocusSupport.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/TraverseFocusSupport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="770" max-vertical-offset="2052">
-              <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1530" max-vertical-offset="2196">
+              <caret line="99" column="28" selection-start-line="99" selection-start-column="28" selection-end-line="99" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -147,12 +149,12 @@
         <option value="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/TraverseModeSupport.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/Line.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/GlassPane.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/TraverseFocusSupport.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/FtAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/Rectangle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/SwingAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/FocusTraverse.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/Example.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/TraverseFocusSupport.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/SwingAdapter.java" />
       </list>
     </option>
   </component>
@@ -576,7 +578,13 @@
       <option name="project" value="LOCAL" />
       <updated>1423744875414</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="more complex example">
+      <created>1423746264865</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1423746264865</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -593,7 +601,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32885212" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885212" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497332" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -601,7 +609,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3991727" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3991727" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -630,11 +638,12 @@
     <MESSAGE value="improve glass pane usage" />
     <MESSAGE value="implement basic traverse" />
     <MESSAGE value="add exclusion of components from wrong directions" />
-    <option name="LAST_COMMIT_MESSAGE" value="add exclusion of components from wrong directions" />
+    <MESSAGE value="more complex example" />
+    <option name="LAST_COMMIT_MESSAGE" value="more complex example" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -989,14 +998,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/TraverseFocusSupport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="770" max-vertical-offset="2052">
-          <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/jdk-8-oracle-x64/src.zip!/javax/swing/SwingUtilities.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2403" max-vertical-offset="37296">
@@ -1033,26 +1034,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/SwingAdapter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/Example.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="490" max-vertical-offset="1206">
-          <caret line="41" column="59" selection-start-line="41" selection-start-column="59" selection-end-line="41" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="436" max-vertical-offset="2286">
+          <caret line="29" column="67" selection-start-line="29" selection-start-column="67" selection-end-line="29" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/FocusTraverse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="3060">
-          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="3060">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/Example.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/TraverseFocusSupport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.23794213" vertical-offset="1138" max-vertical-offset="2286">
-          <caret line="55" column="63" selection-start-line="55" selection-start-column="63" selection-end-line="55" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1530" max-vertical-offset="2196">
+          <caret line="99" column="28" selection-start-line="99" selection-start-column="28" selection-end-line="99" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/SwingAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60073936" vertical-offset="485" max-vertical-offset="1206">
+          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
           <folding />
         </state>
       </provider>

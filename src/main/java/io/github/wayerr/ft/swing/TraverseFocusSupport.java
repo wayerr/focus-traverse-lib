@@ -18,6 +18,7 @@ public final class TraverseFocusSupport {
     private boolean focusTraverseMode;
     private RootPaneContainer container;
     private Component oldGlassPane;
+    private Component newFocusOwner;
 
     public TraverseFocusSupport() {
         Toolkit.getDefaultToolkit().addAWTEventListener(new AWTEventListener() {
@@ -48,7 +49,11 @@ public final class TraverseFocusSupport {
                 }
                 if(direction != null) {
                     final Component traverseRoot = container.getRootPane();
-                    Component newFocusOwner = focusTraverse.traverse(traverseRoot, getFocusOwner(), direction);
+                    Component currentFocusOwner = TraverseFocusSupport.this.newFocusOwner;
+                    if(currentFocusOwner == null) {
+                        currentFocusOwner = getFocusOwner();
+                    }
+                    Component newFocusOwner = focusTraverse.traverse(traverseRoot, currentFocusOwner, direction);
                     updateFocusOwner(newFocusOwner);
                 }
             }
@@ -70,6 +75,7 @@ public final class TraverseFocusSupport {
         this.focusTraverseMode = focusTraverseMode;
         //TODO support for multiple containers
         if (this.focusTraverseMode) {
+            this.newFocusOwner = null;
             this.oldGlassPane = container.getGlassPane();
             //TODO update glassPane size
             Component glassPane = getGlassPane();
@@ -81,17 +87,19 @@ public final class TraverseFocusSupport {
             if (glassPane == this._glassPane) {
                 container.setGlassPane(this.oldGlassPane);
             }
+            if(this.newFocusOwner != null) {
+                this.newFocusOwner.requestFocusInWindow();
+            }
         }
     }
 
     private void updateFocusOwner(Component component) {
-        Rectangle rectangle;
         if(component == null) {
-            rectangle = null;
-        } else {
-            rectangle = component.getBounds();
-            rectangle.setLocation(SwingUtilities.convertPoint(component, rectangle.getLocation(), container.getRootPane()));
+            return;
         }
+        Rectangle rectangle = component.getBounds();
+        rectangle.setLocation(SwingUtilities.convertPoint(component.getParent(), rectangle.getLocation(), container.getRootPane()));
+        this.newFocusOwner = component;
         _glassPane.setRectangle(rectangle);
     }
 

@@ -17,7 +17,7 @@ public final class SwingAdapter implements FtAdapter<Component> {
 
     @Override
     public void getBounds(Component root, Component comp, Rectangle rect) {
-        Point point = SwingUtilities.convertPoint(comp, comp.getX(), comp.getY(), root);
+        Point point = SwingUtilities.convertPoint(comp.getParent(), comp.getX(), comp.getY(), root);
         rect.x = point.x;
         rect.y = point.y;
         rect.w = comp.getWidth();
