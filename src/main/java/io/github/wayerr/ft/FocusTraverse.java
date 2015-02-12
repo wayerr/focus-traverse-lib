@@ -1,7 +1,6 @@
 package io.github.wayerr.ft;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -22,33 +21,27 @@ public final class FocusTraverse<C> {
      * @param direction direction in which focus must be traversed
      */
     public C traverse(C root, C current, Direction direction) {
-        List<C> childs = new ArrayList<C>();
-        int size = 0;
-        C parent = adapter.getParent(current);
-        while(true) {
-            if(parent == null) {
-                return null;
-            }
-            adapter.getChilds(parent, childs);
-            size = childs.size();
-            if(size > 1) {
-                break;
-            }
-            parent = adapter.getParent(current);
+        List<C> childs = getNeighbors(current);
+        if(childs.isEmpty()) {
+            return null;
         }
-        //we must exclude current
-        childs.remove(current);
-        size = childs.size();
 
         Rectangle currrect = new Rectangle();
         adapter.getBounds(root, current, currrect);
-        Rectangle neighborrect = new Rectangle();
+
+        final int size = childs.size();
         C nearest = null;
+        Rectangle neighborrect = new Rectangle();
         float nearestDistance = Float.MAX_VALUE;
         System.out.println("curr rect: " + currrect);
         for(int i = 0; i < size; i++) {
             C child = childs.get(i);
             adapter.getBounds(root, child, neighborrect);
+            //we must consider only components which placed in true direction from current
+            if(!isPlacedIn(direction, currrect, neighborrect)) {
+                continue;
+            }
+
             float distance = distance(direction, currrect, neighborrect);
             System.out.println("rect: " + neighborrect);
             System.out.println("distance: " + distance);
@@ -59,6 +52,49 @@ public final class FocusTraverse<C> {
         }
         System.out.println(" res: " + nearestDistance);
         return nearest;
+    }
+
+    private boolean isPlacedIn(Direction direction, Rectangle current, Rectangle neighborrect) {
+        boolean ok;
+        switch (direction) {
+            case RIGHT: {
+                ok = current.x + current.w < neighborrect.x ;
+            }
+            break;
+            case DOWN: {
+                ok = current.y + current.h < neighborrect.y;
+            }
+            break;
+            case LEFT: {
+                ok = current.x > neighborrect.x + neighborrect.w;
+            }
+            break;
+            case UP: {
+                ok = current.y > neighborrect.y + neighborrect.h;
+            }
+            break;
+            default:
+                throw new IllegalArgumentException(direction + " illegal direction");
+        }
+        return ok;
+    }
+
+    private List<C> getNeighbors(C current) {
+        List<C> childs = new ArrayList<C>();
+        int size = 0;
+        C parent = adapter.getParent(current);
+        while(true) {
+            if(parent == null) {
+                break;
+            }
+            adapter.getChilds(parent, childs);
+            size = childs.size();
+            if(size > 1) {
+                break;
+            }
+            parent = adapter.getParent(current);
+        }
+        return childs;
     }
 
     private float distance(Direction direction, Rectangle from, Rectangle to) {

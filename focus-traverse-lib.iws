@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7569e837-ef9a-491a-92b5-743926dc7b8c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/Line.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/FocusTraverse.java" afterPath="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/FocusTraverse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/FtAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/FtAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/GlassPane.java" afterPath="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/GlassPane.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/Rectangle.java" afterPath="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/Rectangle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/SwingAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/SwingAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/TraverseFocusSupport.java" afterPath="$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/swing/TraverseFocusSupport.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/focus-traverse-lib.iws" afterPath="$PROJECT_DIR$/focus-traverse-lib.iws" />
     </list>
     <ignored path="focus-traverser-lib.iws" />
@@ -60,7 +54,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="2403" max-vertical-offset="37296">
               <caret line="179" column="24" selection-start-line="179" selection-start-column="24" selection-end-line="179" selection-end-column="24" />
-              <folding />
+              <folding>
+                <element signature="e#0#80059#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,7 +66,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="35829" max-vertical-offset="182376">
               <caret line="2027" column="36" selection-start-line="2027" selection-start-column="36" selection-end-line="2027" selection-end-column="36" />
-              <folding />
+              <folding>
+                <element signature="e#0#377448#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,8 +76,8 @@
       <file leaf-file-name="FocusTraverse.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/FocusTraverse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65789473" vertical-offset="338" max-vertical-offset="2412">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.9162561" vertical-offset="486" max-vertical-offset="3060">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -88,7 +86,7 @@
       <file leaf-file-name="Rectangle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/Rectangle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="522">
+            <state vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="522">
               <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
               <folding />
             </state>
@@ -98,7 +96,7 @@
       <file leaf-file-name="Line.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/Line.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="252">
+            <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="252">
               <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
               <folding />
             </state>
@@ -203,6 +201,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -311,7 +310,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -568,7 +566,13 @@
       <option name="project" value="LOCAL" />
       <updated>1423583389353</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="implement basic traverse">
+      <created>1423664162819</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1423664162821</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -585,10 +589,10 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32988626" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32885212" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497332" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497332" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -620,15 +624,16 @@
     </option>
     <MESSAGE value="project files" />
     <MESSAGE value="improve glass pane usage" />
-    <option name="LAST_COMMIT_MESSAGE" value="improve glass pane usage" />
+    <MESSAGE value="implement basic traverse" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement basic traverse" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="colorWithAlpha.getAlpha()" language="JAVA" custom="" />
+        <watch expression="((JTextArea) child).getText()" language="JAVA" custom="javax.swing.JTextArea" />
       </configuration>
     </watches-manager>
   </component>
@@ -675,9 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="12326" max-vertical-offset="16650">
           <caret line="723" column="27" selection-start-line="723" selection-start-column="27" selection-end-line="723" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#33305#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -685,9 +687,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="10364" max-vertical-offset="19602">
           <caret line="648" column="17" selection-start-line="648" selection-start-column="17" selection-end-line="648" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#40598#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -695,9 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="47106" max-vertical-offset="100260">
           <caret line="2650" column="0" selection-start-line="2650" selection-start-column="0" selection-end-line="2650" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#211131#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -765,9 +761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="12326" max-vertical-offset="16650">
           <caret line="723" column="27" selection-start-line="723" selection-start-column="27" selection-end-line="723" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#33305#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -775,9 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="10364" max-vertical-offset="19602">
           <caret line="648" column="17" selection-start-line="648" selection-start-column="17" selection-end-line="648" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#40598#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -785,9 +775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="47106" max-vertical-offset="100260">
           <caret line="2650" column="0" selection-start-line="2650" selection-start-column="0" selection-end-line="2650" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#211131#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -855,9 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="12326" max-vertical-offset="16650">
           <caret line="723" column="27" selection-start-line="723" selection-start-column="27" selection-end-line="723" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#33305#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -865,9 +849,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="10364" max-vertical-offset="19602">
           <caret line="648" column="17" selection-start-line="648" selection-start-column="17" selection-end-line="648" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#40598#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -875,9 +856,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="47106" max-vertical-offset="100260">
           <caret line="2650" column="0" selection-start-line="2650" selection-start-column="0" selection-end-line="2650" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#211131#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -949,9 +927,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="47106" max-vertical-offset="100260">
           <caret line="2650" column="0" selection-start-line="2650" selection-start-column="0" selection-end-line="2650" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#211131#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -959,9 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="12326" max-vertical-offset="16650">
           <caret line="723" column="27" selection-start-line="723" selection-start-column="27" selection-end-line="723" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#33305#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -969,9 +941,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="10364" max-vertical-offset="19602">
           <caret line="648" column="17" selection-start-line="648" selection-start-column="17" selection-end-line="648" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#40598#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1020,7 +989,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33212996" vertical-offset="1202" max-vertical-offset="31464">
           <caret line="100" column="13" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1036,7 +1004,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2403" max-vertical-offset="37296">
           <caret line="179" column="24" selection-start-line="179" selection-start-column="24" selection-end-line="179" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="e#0#80059#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1060,7 +1030,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="35829" max-vertical-offset="182376">
           <caret line="2027" column="36" selection-start-line="2027" selection-start-column="36" selection-end-line="2027" selection-end-column="36" />
-          <folding />
+          <folding>
+            <element signature="e#0#377448#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1074,8 +1046,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/github/wayerr/ft/FocusTraverse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65789473" vertical-offset="338" max-vertical-offset="2412">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.9162561" vertical-offset="486" max-vertical-offset="3060">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
         </state>
       </provider>
