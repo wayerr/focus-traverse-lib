@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7569e837-ef9a-491a-92b5-743926dc7b8c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/focus-traverse-lib.iws" afterPath="$PROJECT_DIR$/focus-traverse-lib.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-    </list>
+    <list default="true" id="7569e837-ef9a-491a-92b5-743926dc7b8c" name="Default" comment="" />
     <ignored path="focus-traverser-lib.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -600,11 +597,17 @@
       <option name="project" value="LOCAL" />
       <updated>1423750734526</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="+ specify main class">
+      <created>1423750925444</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1423750925444</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="1" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -658,7 +661,8 @@
     <MESSAGE value="fix focus lost &amp; improve rect translations" />
     <MESSAGE value="remove sout - code" />
     <MESSAGE value="+ traversing focus through container hierarchy" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ traversing focus through container hierarchy" />
+    <MESSAGE value="+ specify main class" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ specify main class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
