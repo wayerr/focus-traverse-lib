@@ -33,7 +33,6 @@ public final class FocusTraverse<C> {
         C nearest = null;
         Rectangle neighborrect = new Rectangle();
         float nearestDistance = Float.MAX_VALUE;
-        System.out.println("curr rect: " + currrect);
         for(int i = 0; i < size; i++) {
             C child = childs.get(i);
             adapter.getBounds(root, child, neighborrect);
@@ -43,14 +42,11 @@ public final class FocusTraverse<C> {
             }
 
             float distance = distance(direction, currrect, neighborrect);
-            System.out.println("rect: " + neighborrect);
-            System.out.println("distance: " + distance);
             if(nearest == null || nearestDistance > distance) {
                 nearest = child;
                 nearestDistance = distance;
             }
         }
-        System.out.println(" res: " + nearestDistance);
         return nearest;
     }
 
