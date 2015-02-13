@@ -27,6 +27,9 @@
         <module name="focus-traverser-lib" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="focus-traverse-lib" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
   <component name="CopyrightManager" default="" />
   <component name="DaemonCodeAnalyzer">

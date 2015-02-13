@@ -2,6 +2,7 @@ package io.github.wayerr.ft.swing;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.lang.reflect.InvocationTargetException;
 
 /**
@@ -58,9 +59,13 @@ public final class Example implements Runnable {
         );
 
 
-        //!!!
+        // code for using of TraverseFocusSupport
         TraverseFocusSupport tfs = new TraverseFocusSupport();
-        tfs.install(frame);
+        tfs.setFocusPainter(new DefaultFocusPainter(tfs));
+        DefaultKeyboardAdapter keyboardAdapter = new DefaultKeyboardAdapter(tfs);
+        keyboardAdapter.install();
+        tfs.install();
+        // end code
 
         Dimension ss = Toolkit.getDefaultToolkit().getScreenSize();
         double x = ss.width / 3d;
